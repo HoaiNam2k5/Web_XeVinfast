@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vinfast Âm Phủ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap/CSS/index.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navbar VinFast Âm phủ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo-highlight" alt="VinFast" height="50">
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nội dung navbar -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ô tô</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Xe máy điện</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dịch vụ hậu mãi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pin và trạm sạc</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Lưu trữ năng lượng</a></li>
+                </ul>
+
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-primary" href="#">TÀI KHOẢN</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="#">ĐĂNG KÍ LÁI THỬ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Banner Carousel -->
+    <div>
+        <div id="vinfastBanner" class="carousel slide" data-bs-ride="carousel">
+            <!-- Dots phân trang -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#vinfastBanner" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#vinfastBanner" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#vinfastBanner" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#vinfastBanner" data-bs-slide-to="3"></button>
+
+            </div>
+
+            <!-- Ảnh banner -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/banner1.png" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner2.jpg" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner3.jpg" alt="Banner 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner4.jpg" alt="Banner 3">
+                </div>
+
+            </div>
+
+            <!-- Nút chuyển trái/phải -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#vinfastBanner" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#vinfastBanner" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    <!----incon liên hệ-->
+    <div class="floating-icon-wrapper">
+        <a href="https://zalo.me/yournumber" target="_blank" class="floating-icon">
+            <img src="images/zalo.jpg" alt="Zalo" width="40" height="40" />
+            <span class="tooltip">Nhắn cho người Âm Phủ 😎 </span>
+        </a>
+        <a href="https://zalo.me/yournumber" target="_blank" class="floating-icon">
+            <img src="images/phone.jpg" alt="Zalo" width="40" height="40" />
+            <span class="tooltip">SĐT Âm Phủ 097199999 😎 </span>
+        </a>
+    </div>
+
+
+    <!----thông tin xe-->
+    <div class="carousel-xe" id="carousel">
+        <div class="slide-track">
+            <!-- ==== Slide 1 ==== -->
+            <div class="slide">
+
+                <img src="images/car/vf9.png" alt="VF 9" />
+
+                <div class="meta">
+                    <div>
+                        <h4>Dòng xe</h4>
+                        <strong>E-SUV</strong>
+                    </div>
+                    <div>
+                        <h4>Số chỗ ngồi</h4>
+                        <strong>6-7 chỗ</strong>
+                    </div>
+                    <div>
+                    <h4>Quãng đường </h4>
+                    <strong>626 km (NEDC)</strong>
+                    </div>
+                    <div>                       
+                        <h4>Giá từ </h4>
+                        <strong>1.499.000.000&nbsp;VNĐ</strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='chi-tiet-vf9.html'">Xem chi tiết</button>
+                </div>
+            </div>
+
+            <!-- ==== Slide 2  ==== -->
+            <div class="slide">
+                <img src="images/car/vf8.jpg" alt="VF 8" />
+                <div class="meta">
+                    <div>
+                        <h4>Dòng xe</h4>
+                        <strong>D-SUV</strong>
+                    </div>
+                    <div>
+                        <h4>Số chỗ ngồi</h4>
+                        <strong>5 chỗ</strong>
+                    </div>
+                    <div>
+                        <h4>Quãng đường </h4>
+                        <strong>471 km</strong>
+                    </div>
+                    <div>
+                        <h4>Giá từ </h4>
+                        <strong>1.019.000.000&nbsp;VNĐ</strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/car/vf3.jpg" alt="VF 3" />
+                <div class="meta">
+                    <div>
+                        <h4>Dòng xe</h4>
+                        <strong>MiniCar</strong>
+                    </div>
+                    <div>
+                        <h4>Số chỗ ngồi</h4>
+                        <strong>4 chỗ</strong>
+                    </div>
+                    <div>
+                        <h4>Quãng đường </h4>
+                        <strong>210 km (NEDC)</strong>
+                    </div>
+                    <div>
+                        <h4>Giá từ </h4>
+                        <strong>299.000.000&nbsp;VNĐ</strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/car/vf5.jpg" alt="VF 5" />
+                <div class="meta">
+                    <div>
+                        <h4>Dòng xe</h4>
+                        <strong>A-SUV</strong>
+                    </div>
+                    <div>
+                        <h4>Số chỗ ngồi</h4>
+                        <strong>5 chỗ</strong>
+                    </div>
+                    <div>
+                        <h4>Quãng đường </h4>
+                        <strong>326,4 km (NEDC)</strong>
+                    </div>
+                    <div>
+                        <h4>Giá từ </h4>
+                        <strong>529.000.000&nbsp;VNĐ</strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/car/vf6.png" alt="VF 6" />
+                <div class="meta">
+                    <div>
+                        <h4>Dòng xe</h4>
+                        <strong>B-SUV</strong>
+                    </div>
+                    <div>
+                        <h4>Số chỗ ngồi</h4>
+                        <strong>5 chỗ</strong>
+                    </div>
+                    <div>
+                        <h4>Quãng đường </h4>
+                        <strong>480 km</strong>
+                    </div>
+                    <div>
+                        <h4>Giá từ </h4>
+                        <strong>689.000.000&nbsp;VNĐ</strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/car/vf7.png" alt="VF 7" />
+                <div class="meta">
+                    <div>
+                        <h4>Dòng xe</h4>
+                        <strong>C-SUV</strong>
+                    </div>
+                    <div>
+                        <h4>Số chỗ ngồi</h4>
+                        <strong>5 chỗ</strong>
+                    </div>
+                    <div>
+                        <h4>Quãng đường </h4>
+                        <strong>496 km</strong>
+                    </div>
+                    <div>
+                        <h4>Giá từ </h4>
+                        <strong>799.000.000&nbsp;VNĐ</strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- Mũi tên điều khiển -->
+        <div class="controls">
+            <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <!-- Chấm chỉ báo -->
+    <div class="indicators" id="indicators"></div>
+
+    <section class="newsletter-section">
+        <div class="newsletter-overlay">
+            <h2>Đăng ký nhận thông tin</h2>
+            <p>Đăng ký nhận thông tin chương trình khuyến mãi, dịch vụ VinFast Âm Phủ.</p>
+
+            <form class="newsletter-form">
+                <input type="email" placeholder="Nhập email của bạn" required />
+                <button type="submit">ĐĂNG KÝ</button>
+            </form>
+
+            <p class="note">
+                Bằng cách đăng ký, Quý khách xác nhận đã đọc, hiểu và đồng ý với
+                <a href="#">Chính sách Quyền riêng tư</a> của VinFast Âm Phủ.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container2">
+            <div class="footer-section">
+                <img src="images/logo.png" alt="VinFast Logo âm phủ" class="logo-footer" />
+                <p><strong>Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast Âm Phủ</strong></p>
+                <p><strong>MST/MSDN:</strong> 0123344555 do Âm Phủ cấp lần đầu ngày 01/2/1945 và các lần thay đổi tiếp theo.</p>
+                <p><strong>Địa chỉ trụ sở chính:</strong> Số 7, Địa Ngục, Việt Nam</p>
+            </div>
+
+            <div class="footer-section">
+                <ul class="footer-links">
+                    <li><a href="#">Về VinFast</a></li>
+                    <li><a href="#">Về Vingroup</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Showroom & Đại lý</a></li>
+                    <li><a href="#">Điều khoản chính sách</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-contact">
+                <p><strong>Dịch vụ khách hàng</strong></p>
+                <p>📞 1900 000000</p>
+                <p>✉️ support.vn@vinfastauto.com</p>
+
+                <p><strong>Speak-up Hotline</strong></p>
+                <p>📞 +84 7788899222</p>
+                <p>✉️ v.speakup@vinfastAmPhu.vn</p>
+            </div>
+
+            <div class="footer-section footer-social">
+                <span>Kết nối với VinFast</span><br />
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!---bubble---------------------------------->
+    <div class="footer-bubble">
+        <strong>Khuyến Mãi</strong>
+        <div class="tooltip-bubble" id="bubbleTooltip">
+            Ưu đãi 20% Khi mua trong tháng Cô Hồn 👻
+            <button class="close-btn" onclick="closeTooltip()">×</button>
+        </div>
+
+    </div>
+
+    <script src="bootstrap/JS/index.js"></script>
+    <script src="bootstrap/JS/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/JS/bootstrap.min.js"></script>
+</body>
+</html>
