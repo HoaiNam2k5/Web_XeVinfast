@@ -10,10 +10,22 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+            body > .container {
+                flex: 1; /* Chiếm toàn bộ phần còn lại để đẩy footer xuống */
+            }
+
         body {
             background-color: #f8f9fa;
         }
         .login-container {
+           
             max-width: 450px;
             margin: 50px auto;
             padding: 30px;
@@ -62,16 +74,218 @@
             align-items: center;
             justify-content: center;
         }
+        /* Tooltip Bubble */
+        .footer-bubble {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 14px;
+        }
+
+        .tooltip-bubble {
+            position: fixed;
+            bottom: 50px;
+            left: 20px;
+            background-color: white;
+            color: #111;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            max-width: 250px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #888;
+            margin-left: auto;
+        }
+
+        .tooltip-bubble::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .close-bubble {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+        /*footer-----------------------------------------------------------------*/
+        .footer {
+            background: white;
+            color: #111;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+
+            .footer .container2 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+        .footer-section {
+            flex: 1 1 200px;
+            min-width: 200px;
+        }
+
+            .footer-section img.logo-footer {
+                width: 150px;
+                margin-bottom: 15px;
+                background-color: white;
+            }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .footer-links a {
+                color: #111;
+                text-decoration: none;
+            }
+
+                .footer-links a:hover {
+                    text-decoration: underline;
+                }
+
+        .footer-contact {
+            margin-top: 20px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+            .footer-social a {
+                color: #111;
+                font-size: 1.2rem;
+                margin-right: 10px;
+                font-size: 20px;
+                color: #333;
+                text-decoration: none;
+            }
+
+        @media (max-width: 768px) {
+            .container2 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+
+        /* Logo nổi bật khi load */
+        .logo-highlight {
+            transition: all 0.5s ease-in-out;
+            filter: drop-shadow(0 0 6px #00f0ff); /* ánh sáng nhẹ màu xanh */
+        }
+
+            /* Khi hover sẽ đổi màu + glow mạnh hơn */
+            .logo-highlight:hover {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 10px #00f0ff) brightness(1.2);
+            }
+
+        @keyframes colorGlow {
+            0% {
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+
+            33% {
+                filter: drop-shadow(0 0 6px #00ff00);
+            }
+
+            66% {
+                filter: drop-shadow(0 0 6px #0000ff);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+        }
+
+        .logo-highlight {
+            animation: colorGlow 3s infinite;
+            transition: transform 0.3s;
+        }
+
+            .logo-highlight:hover {
+                transform: scale(1.1);
+            }
     </style>
 </head>
 <body>
+    <!-- Navbar VinFast Âm phủ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo-highlight" alt="VinFast" height="50">
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nội dung navbar -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="GioiThieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="VF3.html">Ô tô</a></li>
+              
+                    <li class="nav-item"><a class="nav-link" href="Pin.html">Pin và trạm sạc</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LuuTruNL.html">Lưu trữ năng lượng</a></li>
+                </ul>
+
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-right:10px;margin-top:2px;"><a class="nav-link text-primary" href="login.html">TÀI KHOẢN</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="datcoc.html">Đặt cọc</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="login-container">
             <div class="brand-logo">
                 <img src="images/logo.png" alt="Logo" class="img-fluid">
             </div>
             <h2 class="text-center mb-4">Đăng nhập</h2>
-            
+
             <form id="loginForm" novalidate>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -80,7 +294,7 @@
                         Vui lòng nhập email hợp lệ
                     </div>
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="password" class="form-label">Mật khẩu</label>
                     <div class="password-container">
@@ -91,21 +305,21 @@
                         Vui lòng nhập mật khẩu
                     </div>
                 </div>
-                
+
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="rememberMe">
                     <label class="form-check-label" for="rememberMe">Ghi nhớ đăng nhập</label>
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary btn-login">Đăng nhập</button>
-                
+
                 <div class="text-center mt-3">
                     <a href="#" class="text-decoration-none">Quên mật khẩu?</a>
                 </div>
             </form>
-            
+
             <hr class="my-4">
-            
+
             <div class="social-login">
                 <p class="text-muted mb-3">Hoặc đăng nhập với</p>
                 <button class="btn btn-outline-primary social-btn">
@@ -115,26 +329,77 @@
                     <i class="fab fa-google"></i>
                 </button>
             </div>
-            
+
             <div class="text-center mt-4">
-                <p class="mb-0">Chưa có tài khoản? 
+                <p class="mb-0">
+                    Chưa có tài khoản?
                     <a href="register.html" class="text-decoration-none">Đăng ký ngay</a>
                 </p>
             </div>
+
         </div>
+    </div>  <!---bubble---------------------------------->
+    <div class="footer-bubble">
+        <strong>Khuyến Mãi</strong>
+        <div class="tooltip-bubble" id="bubbleTooltip">
+            Ưu đãi 20% Khi mua trong tháng Cô Hồn 👻
+            <button class="close-btn" onclick="closeTooltip()">×</button>
+        </div>
+
     </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container2">
+            <div class="footer-section">
+                <img src="images/logo.png" alt="VinFast Logo âm phủ" class="logo-footer" />
+
+                <p><strong>Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast Âm Phủ</strong></p>
+                <p><strong>MST/MSDN:</strong> 0123344555 do Âm Phủ cấp lần đầu ngày 01/2/1945 và các lần thay đổi tiếp theo.</p>
+                <p><strong>Địa chỉ trụ sở chính:</strong> Số 7, Địa Ngục, Việt Nam</p>
+            </div>
+
+            <div class="footer-section">
+                <ul class="footer-links">
+                    <li><a href="#">Về VinFast</a></li>
+                    <li><a href="#">Về Vingroup</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Showroom & Đại lý</a></li>
+                    <li><a href="#">Điều khoản chính sách</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-contact">
+                <p><strong>Dịch vụ khách hàng</strong></p>
+                <p>📞 1900 000000</p>
+                <p>✉️ support.vn@vinfastauto.com</p>
+
+                <p><strong>Speak-up Hotline</strong></p>
+                <p>📞 +84 7788899222</p>
+                <p>✉️ v.speakup@vinfastAmPhu.vn</p>
+            </div>
+
+            <div class="footer-section footer-social">
+                <span>Kết nối với VinFast</span><br />
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+
+
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const loginForm = document.getElementById('loginForm');
             const togglePassword = document.getElementById('togglePassword');
             const passwordInput = document.getElementById('password');
 
             // Toggle password visibility
-            togglePassword.addEventListener('click', function() {
+            togglePassword.addEventListener('click', function () {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
                 this.classList.toggle('fa-eye');
@@ -142,9 +407,9 @@
             });
 
             // Form validation
-            loginForm.addEventListener('submit', function(event) {
+            loginForm.addEventListener('submit', function (event) {
                 event.preventDefault();
-                
+
                 if (!loginForm.checkValidity()) {
                     event.stopPropagation();
                     loginForm.classList.add('was-validated');
@@ -166,7 +431,7 @@
                     } else {
                         sessionStorage.setItem('loggedInUser', JSON.stringify(user));
                     }
-                    
+
                     // Redirect to home page
                     window.location.href = 'index.html';
                 } else {

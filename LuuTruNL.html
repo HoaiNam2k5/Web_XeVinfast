@@ -1,0 +1,800 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VinFast Energy</title>
+    <link href="bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+    
+ 
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        
+        .banner {
+            position: relative;
+            text-align: center;
+        }
+
+            .banner img {
+                width: 100%;
+                height: auto;
+            }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+        }
+
+            .banner-content h1 {
+                font-size: 2.5rem;
+                margin: 0;
+            }
+
+            .banner-content h2 {
+                font-size: 1.8rem;
+                margin: 10px 0;
+            }
+
+        .btn {
+            display: inline-block;
+            background: #0072CE;
+            padding: 12px 24px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+       
+        .intro {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+            .intro h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .intro p {
+                max-width: 800px;
+                margin: 0 auto 40px;
+            }
+
+      
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+            gap: 40px;
+            padding: 60px 20px;
+        }
+
+        .feature h3 {
+            margin-top: 12px;
+        }
+
+        .feature p {
+            color: #555;
+        }
+
+     
+        .portfolio {
+            padding: 60px 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+            .portfolio h2 {
+                margin-bottom: 40px;
+            }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item a {
+            color: #0072CE;
+            font-weight: bold;
+        }
+
+        
+        .highlights {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .highlight-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+            gap: 20px;
+        }
+
+            .highlight-cards .card {
+                border: 1px solid #ddd;
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .highlight-cards h4 {
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+
+       
+        .specs {
+            padding: 60px 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+            .tabs button {
+                padding: 10px 20px;
+                border: none;
+                background: #ddd;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+                .tabs button.active {
+                    background: #0072CE;
+                    color: white;
+                }
+
+        .tab-content {
+            display: none;
+        }
+
+            .tab-content.active {
+                display: block;
+            }
+
+       
+        footer {
+            background: #222;
+            color: #eee;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .energy-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 60px 5%;
+            gap: 40px;
+            align-items: flex-start;
+            background-color: white;
+        }
+
+        .energy-carousel {
+            flex: 1 1 50%;
+            position: relative;
+            overflow: hidden;
+            min-width: 320px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .energy-card {
+            flex: 0 0 100%;
+            background: #f6f9f9;
+            border-radius: 8px;
+            padding: 24px;
+            margin-right: 16px;
+            box-sizing: border-box;
+        }
+
+            .energy-card img {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 16px;
+            }
+
+            .energy-card h3 {
+                margin-bottom: 8px;
+                font-size: 18px;
+                color: #222;
+            }
+
+            .energy-card p {
+                font-size: 14px;
+                color: #555;
+            }
+
+        .card-highlight {
+            margin-top: 12px;
+            border-left: 3px solid #0072ce;
+            padding-left: 12px;
+            background: white;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 10;
+        }
+
+            .carousel-nav.prev {
+                left: 5px;
+            }
+
+            .carousel-nav.next {
+                right: 5px;
+            }
+
+        .energy-description {
+            flex: 1 1 45%;
+            max-width: 500px;
+        }
+
+        .energy-label {
+            color: gray;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .energy-description h2 {
+            font-size: 28px;
+            margin: 16px 0;
+            color: #000;
+        }
+
+        .energy-description p {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .text-blue {
+            color: #0056d2;
+            font-weight: 500;
+        }
+
+
+        .factory-section {
+            padding: 60px 5%;
+            text-align: center;
+            background-color: white;
+        }
+
+        .factory-header .sub-heading {
+            color: gray;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .factory-header h2 {
+            font-size: 32px;
+            font-weight: 500;
+            margin-top: 8px;
+            color: #111;
+        }
+
+        .factory-video-wrapper {
+            margin-top: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .factory-video-wrapper video {
+                width: 100%;
+                max-height: 600px;
+                border: none;
+                border-radius: 6px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+        /* nút đặt cọc và chi tiết*/
+        .btn {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 36px;
+            border: 2px solid #0070f3;
+            background: #fff;
+            color: #0070f3;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+            .btn::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 100%;
+                background: #0070f3;
+                z-index: -1;
+                transition: width 0.3s ease;
+            }
+
+            .btn:hover {
+                color: #fff;
+            }
+
+                .btn:hover::before {
+                    width: 100%;
+                }
+
+        /* Logo nổi bật khi load */
+        .logo-highlight {
+            transition: all 0.5s ease-in-out;
+            filter: drop-shadow(0 0 6px #00f0ff); /* ánh sáng nhẹ màu xanh */
+        }
+
+            /* Khi hover sẽ đổi màu + glow mạnh hơn */
+            .logo-highlight:hover {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 10px #00f0ff) brightness(1.2);
+            }
+
+        @keyframes colorGlow {
+            0% {
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+
+            33% {
+                filter: drop-shadow(0 0 6px #00ff00);
+            }
+
+            66% {
+                filter: drop-shadow(0 0 6px #0000ff);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+        }
+
+        .logo-highlight {
+            animation: colorGlow 3s infinite;
+            transition: transform 0.3s;
+        }
+
+            .logo-highlight:hover {
+                transform: scale(1.1);
+            }
+        /* Tooltip Bubble */
+        .footer-bubble {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 14px;
+        }
+
+        .tooltip-bubble {
+            position: fixed;
+            bottom: 50px;
+            left: 20px;
+            background-color: white;
+            color: #111;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            max-width: 250px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #888;
+            margin-left: auto;
+        }
+
+        .tooltip-bubble::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .close-bubble {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+
+        .floating-icon {
+            animation: shake 1.2s infinite;
+            transition: transform 0.3s;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-icon-wrapper {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .floating-icon {
+            position: relative;
+            margin-top: 6px;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: shake 1.2s infinite;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+            .floating-icon:hover {
+                transform: scale(1.1);
+            }
+
+            /* Tooltip hiển thị khi hover */
+            .floating-icon .tooltip {
+                position: absolute;
+                right: 70px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #0084ff;
+                color: #fff;
+                padding: 6px 12px;
+                border-radius: 6px;
+                white-space: nowrap;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s, transform 0.3s;
+                font-size: 14px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .floating-icon:hover .tooltip {
+                opacity: 1;
+                transform: translateY(-50%) translateX(-5px);
+            }
+        /*footer-----------------------------------------------------------------*/
+        .footer {
+            background: white;
+            color: #111;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+
+            .footer .container2 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+        .footer-section {
+            flex: 1 1 200px;
+            min-width: 200px;
+        }
+
+            .footer-section img.logo-footer {
+                width: 150px;
+                margin-bottom: 15px;
+                background-color: white;
+            }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .footer-links a {
+                color: #111;
+                text-decoration: none;
+            }
+
+                .footer-links a:hover {
+                    text-decoration: underline;
+                }
+
+        .footer-contact {
+            margin-top: 20px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+            .footer-social a {
+                color: #111;
+                font-size: 1.2rem;
+                margin-right: 10px;
+                font-size: 20px;
+                color: #333;
+                text-decoration: none;
+            }
+
+        @media (max-width: 768px) {
+            .container2 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar VinFast Âm phủ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo-highlight" alt="VinFast" height="50">
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nội dung navbar -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="GioiThieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="VF3.html">Ô tô</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="Pin.html">Pin và trạm sạc</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LuuTruNL.html">Lưu trữ năng lượng</a></li>
+                </ul>
+
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-right:10px;margin-top:2px;"><a class="nav-link text-primary" href="login.html">TÀI KHOẢN</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="datcoc.html">Đặt cọc</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!----incon liên hệ-->
+    <div class="floating-icon-wrapper">
+        <a href="https://zalo.me/yournumber" target="_blank" class="floating-icon">
+            <img src="images/zalo.jpg" alt="Zalo" width="40" height="40" />
+            <span class="tooltip">Nhắn cho người Âm Phủ 😎 </span>
+        </a>
+        <a href="https://zalo.me/yournumber" target="_blank" class="floating-icon">
+            <img src="images/phone.jpg" alt="Zalo" width="40" height="40" />
+            <span class="tooltip">SĐT Âm Phủ 097199999 😎 </span>
+        </a>
+    </div>
+    <header class="banner">
+        <div class="banner-content">
+            <h1>Giải pháp lưu trữ năng lượng</h1>
+            <h2 class="slogan">VinFast Energy</h2>
+            <a href="#contact" class="btn">Liên hệ tư vấn</a>
+        </div>
+        <img src="images/energy.jpg" alt="VinFast Energy" />
+    </header>
+
+    <section class="intro">
+        <div class="row align-items-center">
+            <div class="col-lg-6 intro-text">
+                <h2>GIỚI THIỆU CHUNG</h2>
+                <p>
+                    VinFast Energy là đơn vị hàng đầu về cung cấp giải pháp lưu trữ năng lượng với năng lực toàn diện từ nghiên cứu phát triển đến sản xuất.
+                    VinFast Energy ứng dụng công nghệ pin Lithium-ion hiện đại để cung cấp giải pháp lưu trữ năng lượng đáp ứng các tiêu chuẩn quốc tế về an toàn và hiệu quả.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img src="images/energy2.jpg" />
+            </div>
+        </div>
+    </section>
+
+    <section class="energy-section">
+        <div class="energy-carousel">
+            <div class="carousel-track">
+                <div class="energy-card">
+                    <img src="images/energy3.jpg" alt="Icon 1" />
+                    <h3>Tối ưu năng lượng tái tạo</h3>
+                    <p>Các nhà đầu tư năng lượng tái tạo (NLTT) thường đối mặt với rủi ro thất thoát...</p>
+                    <div class="card-highlight">
+                        Giải pháp BESS VinFast Energy đem lại lợi ích trong việc lưu trữ nguồn NLTT, gia tăng tỷ lệ sử dụng điện sạch...
+                    </div>
+                </div>
+                <div class="energy-card">
+                    <img src="images/energy4.png" alt="Icon 2" />
+                    <h3>Tối ưu chi phí sử dụng điện</h3>
+                    <p>Nhu cầu tiêu thụ điện ngày càng tăng thúc đẩy xu hướng sử dụng điện hiệu quả hơn.</p>
+                    <div class="card-highlight">
+                        Giải pháp giúp khách hàng chủ động hơn trong việc sử dụng điện năng...
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-nav prev">&larr;</button>
+            <button class="carousel-nav next">&rarr;</button>
+        </div>
+
+        <div class="energy-description">
+            <span class="energy-label">ỨNG DỤNG</span>
+            <h2>Các giải pháp phổ biến</h2>
+            <p>
+                Pin lưu trữ năng lượng (BESS) được xem là <span class="text-blue">giải pháp đóng vai trò then chốt</span> trong việc thúc đẩy sử dụng Năng lượng tái tạo.
+            </p>
+            <p>
+                Giải pháp BESS của VinFast Energy có thể <span class="text-blue">linh hoạt mở rộng quy mô</span> để đáp ứng các nhu cầu từ sản xuất, truyền tải và phân phối điện năng.
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <section class="highlights">
+        <h2>VinFast Energy – Nhà cung cấp đáng tin cậy</h2>
+        <div class="highlight-cards">
+            <div class="card"><h4>Giải pháp phù hợp với nhu cầu</h4><p style="color: gray">Thiết kế và tinh chỉnh theo yêu cầu khách hàng.</p></div>
+            <div class="card"><h4>Chế độ bảo hành toàn diện</h4><p style="color: gray">Bảo hành kỹ thuật & dịch vụ chuyên nghiệp tại Việt Nam.</p></div>
+            <div class="card"><h4>Tương thích đa ứng dụng</h4><p style="color: gray">Hỗ trợ Peak Shaving, Renewables Integration, Load Balancing,…</p></div>
+            <div class="card"><h4>Thiết kế linh hoạt dễ mở rộng</h4><p style="color: gray">Dễ dàng tích hợp và mở rộng quy mô hệ thống.</p></div>
+            <div class="card"><h4>Chi phí cạnh tranh</h4><p style="color: gray">Cam kết tối ưu hiệu quả đầu tư lâu dài.</p></div>
+        </div>
+    </section>
+
+
+    <section class="factory-section">
+        <div class="factory-header">
+            <span class="sub-heading">NHÀ MÁY & DÂY CHUYỀN</span>
+            <h2>KHÁM PHÁ NHÀ MÁY SẢN XUẤT</h2>
+        </div>
+        <div class="factory-video-wrapper">
+            <video controls autoplay muted playsinline>
+                <source src="video/video.mp4" type="video/mp4" />
+                Trình duyệt của bạn không hỗ trợ video.
+            </video>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container2">
+            <div class="footer-section">
+                <img src="images/logo.png" alt="VinFast Logo âm phủ" class="logo-footer" />
+
+                <p><strong>Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast Âm Phủ</strong></p>
+                <p><strong>MST/MSDN:</strong> 0123344555 do Âm Phủ cấp lần đầu ngày 01/2/1945 và các lần thay đổi tiếp theo.</p>
+                <p><strong>Địa chỉ trụ sở chính:</strong> Số 7, Địa Ngục, Việt Nam</p>
+            </div>
+
+            <div class="footer-section">
+                <ul class="footer-links">
+                    <li><a href="#">Về VinFast</a></li>
+                    <li><a href="#">Về Vingroup</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Showroom & Đại lý</a></li>
+                    <li><a href="#">Điều khoản chính sách</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-contact">
+                <p><strong>Dịch vụ khách hàng</strong></p>
+                <p>📞 1900 000000</p>
+                <p>✉️ support.vn@vinfastauto.com</p>
+
+                <p><strong>Speak-up Hotline</strong></p>
+                <p>📞 +84 7788899222</p>
+                <p>✉️ v.speakup@vinfastAmPhu.vn</p>
+            </div>
+
+            <div class="footer-section footer-social">
+                <span>Kết nối với VinFast</span><br />
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+
+        <!---bubble---------------------------------->
+        <div class="footer-bubble">
+            <strong>Khuyến Mãi</strong>
+            <div class="tooltip-bubble" id="bubbleTooltip">
+                Ưu đãi 20% Khi mua trong tháng Cô Hồn 👻
+                <button class="close-btn" onclick="closeTooltip()">×</button>
+            </div>
+
+        </div>
+    </footer>
+    <script src="bootstrap/JS/bootstrap.min.js"></script>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.energy-card');
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.prev');
+
+        let index = 0;
+        const total = slides.length;
+
+        function updateSlide() {
+            const slideWidth = slides[0].getBoundingClientRect().width + 16;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            index = (index + 1) % total;
+            updateSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            index = (index - 1 + total) % total;
+            updateSlide();
+        });
+
+        setInterval(() => {
+            index = (index + 1) % total;
+            updateSlide();
+        }, 5000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giơi thiệu</title>
+    <link href="bootstrap/CSS/bootstrap.min.css" rel="stylesheet" />
+  
+    <style>
+
+        /* Logo nổi bật khi load */
+        .logo-highlight {
+            transition: all 0.5s ease-in-out;
+            filter: drop-shadow(0 0 6px #00f0ff); /* ánh sáng nhẹ màu xanh */
+        }
+
+            /* Khi hover sẽ đổi màu + glow mạnh hơn */
+            .logo-highlight:hover {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 10px #00f0ff) brightness(1.2);
+            }
+
+        @keyframes colorGlow {
+            0% {
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+
+            33% {
+                filter: drop-shadow(0 0 6px #00ff00);
+            }
+
+            66% {
+                filter: drop-shadow(0 0 6px #0000ff);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 6px #ff0000);
+            }
+        }
+
+        .logo-highlight {
+            animation: colorGlow 3s infinite;
+            transition: transform 0.3s;
+        }
+
+            .logo-highlight:hover {
+                transform: scale(1.1);
+            }
+        .intro-text h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .intro-text h1 {
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+
+
+        .video-banner video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .video-banner {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .video-banner .overlay-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                text-align: center;
+            }
+
+        .global-section {
+            padding: 40px 20px;
+        }
+
+            .global-section h1 {
+                font-size: 2.8em;
+                margin-bottom: 10px;
+            }
+
+            .global-section p {
+                font-size: 1em;
+                max-width: 800px;
+                margin: 0 auto 40px;
+                color: #555;
+            }
+
+        .car-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .car {
+            position: relative;
+            margin: 20px;
+        }
+
+            .car img {
+                width: 400px;
+                max-width: 100%;
+                height: auto;
+                z-index: 2;
+                position: relative;
+            }
+
+        .label {
+            position: absolute;
+            font-size: 10em;
+            font-weight: bold;
+            color: rgba(200, 200, 200, 0.2);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+
+        .intro-section {
+            width: 100%;
+            background-color: #fff;
+        }
+
+            .intro-section .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+        .intro-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                text-align: center;
+            }
+
+                .intro-section .px-5 {
+                    padding-left: 1rem !important;
+                    padding-right: 1rem !important;
+                }
+        }
+        /* nút đặt cọc và chi tiết*/
+        .btn {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 36px;
+            border: 2px solid #0070f3;
+            background: #fff;
+            color: #0070f3;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+            .btn::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 100%;
+                background: #0070f3;
+                z-index: -1;
+                transition: width 0.3s ease;
+            }
+
+            .btn:hover {
+                color: #fff;
+            }
+
+                .btn:hover::before {
+                    width: 100%;
+                }
+
+
+        /*footer-----------------------------------------------------------------*/
+        .footer {
+            background: white;
+            color: #111;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+        }
+
+            .footer .container2 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+        .footer-section {
+            flex: 1 1 200px;
+            min-width: 200px;
+        }
+
+            .footer-section img.logo-footer {
+                width: 150px;
+                margin-bottom: 15px;
+                background-color: white;
+            }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .footer-links a {
+                color: #111;
+                text-decoration: none;
+            }
+
+                .footer-links a:hover {
+                    text-decoration: underline;
+                }
+
+        .footer-contact {
+            margin-top: 20px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+        }
+
+            .footer-social a {
+                color: #111;
+                font-size: 1.2rem;
+                margin-right: 10px;
+                font-size: 20px;
+                color: #333;
+                text-decoration: none;
+            }
+
+        @media (max-width: 768px) {
+            .container2 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+        /* Tooltip Bubble */
+        .footer-bubble {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 14px;
+        }
+
+        .tooltip-bubble {
+            position: fixed;
+            bottom: 50px;
+            left: 20px;
+            background-color: white;
+            color: #111;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            max-width: 250px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #888;
+            margin-left: auto;
+        }
+
+        .tooltip-bubble::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .close-bubble {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+
+        .floating-icon {
+            animation: shake 1.2s infinite;
+            transition: transform 0.3s;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .floating-icon-wrapper {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .floating-icon {
+            position: relative;
+            margin-top: 6px;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: shake 1.2s infinite;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+            .floating-icon:hover {
+                transform: scale(1.1);
+            }
+
+            /* Tooltip hiển thị khi hover */
+            .floating-icon .tooltip {
+                position: absolute;
+                right: 70px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #0084ff;
+                color: #fff;
+                padding: 6px 12px;
+                border-radius: 6px;
+                white-space: nowrap;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s, transform 0.3s;
+                font-size: 14px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .floating-icon:hover .tooltip {
+                opacity: 1;
+                transform: translateY(-50%) translateX(-5px);
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar VinFast Âm phủ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo-highlight" alt="VinFast" height="50">
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nội dung navbar -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="GioiThieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="VF3.html">Ô tô</a></li>
+                  
+                    <li class="nav-item"><a class="nav-link" href="Pin.html">Pin và trạm sạc</a></li>
+                    <li class="nav-item"><a class="nav-link" href="LuuTruNL.html">Lưu trữ năng lượng</a></li>
+                </ul>
+
+
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-right:10px;margin-top:2px;"><a class="nav-link text-primary" href="login.html">TÀI KHOẢN</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="datcoc.html">Đặt cọc</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!----incon liên hệ-->
+    <div class="floating-icon-wrapper">
+        <a href="https://zalo.me/yournumber" target="_blank" class="floating-icon">
+            <img src="images/zalo.jpg" alt="Zalo" width="40" height="40" />
+            <span class="tooltip">Nhắn cho người Âm Phủ 😎 </span>
+        </a>
+        <a href="https://zalo.me/yournumber" target="_blank" class="floating-icon">
+            <img src="images/phone.jpg" alt="Zalo" width="40" height="40" />
+            <span class="tooltip">SĐT Âm Phủ 097199999 😎 </span>
+        </a>
+    </div>
+
+    <!-- Video đầu trang -->
+    <div class="container-fluid p-0 video-banner">
+        <video autoplay muted loop>
+            <source src="https://storage.googleapis.com/vinfast-data-01/The%20company%20behind%20VinFast%20electric%20cars.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
+        <div class="overlay-text">
+            <h1 class="display-4">Chào mừng đến với VINFAST</h1>
+            <p class="lead">Nơi cung cấp các dịch vụ chất lượng cao</p>
+        </div>
+    </div>
+
+
+
+    <!-- Giới thiệu -->
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 intro-text">
+                <h3>Giới thiệu về</h3>
+                <h1>Công ty VinFast</h1>
+                <p>VinFast là công ty thành viên thuộc tập đoàn Vingroup, một trong những Tập đoàn Kinh tế tư nhân đa ngành lớn nhất Châu Á</p>
+                <p>Với triết lý “Đặt khách hàng làm trọng tâm”, VinFast không ngừng sáng tạo để tạo ra các sản phẩm đẳng cấp và xuất sắc cho mọi người.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="images/gioithieu.png" class="img-fluid" alt="Hình ảnh VinFast">
+            </div>
+        </div>
+    </div>
+    <!-- Phần tầm nhìn, sứ mệnh, triết lý, giá trị -->
+    <div class="core-values-section" style="position: relative;">
+        <img src="/Images/vinfast.jpg" alt="Core Values Background" class="w-100" style="max-height: 600px; object-fit: cover;">
+        <div class="container" style="position: absolute; bottom: 30px; left: 0; right: 0;">
+            <div class="row text-white text-center" style="background: rgba(0, 0, 0, 0.4); padding: 2rem 0;">
+                <div class="col-md-3">
+                    <h5>Tầm nhìn</h5>
+                    <p>Trở thành thương hiệu xe điện thông minh thúc đẩy mạnh mẽ cuộc cách mạng xe điện toàn cầu.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Sứ mệnh</h5>
+                    <p>Vì một tương lai xanh cho mọi người.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Triết lý thương hiệu</h5>
+                    <p>Đặt khách hàng làm trọng tâm, VinFast không ngừng sáng tạo để tạo ra các sản phẩm đẳng cấp và trải nghiệm xuất sắc cho mọi người.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Giá trị cốt lõi</h5>
+                    <p>Sản phẩm đẳng cấp, giá tốt, chính sách hậu mãi vượt trội.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="global-section">
+        <h1 class="text-center">Dấu chân toàn cầu</h1>
+        <p>
+            VinFast đã nhanh chóng thiết lập sự hiện diện toàn cầu, thu hút những tài năng tốt nhất từ khắp nơi trên thế giới và
+            hợp tác với một số thương hiệu mang tính biểu tượng nhất trong ngành Ô tô.
+        </p>
+        <div class="car-container">
+            <div class="car car-left">
+                <span class="label">VF8</span>
+                <img src="images/vf8.jpg" alt="VF8" />
+            </div>
+            <div class="car car-right">
+                <span class="label">VF9</span>
+                <img src="images/vf9.jpg" alt="VF9" />
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container2">
+            <div class="footer-section">
+                <img src="images/logo.png" alt="VinFast Logo âm phủ" class="logo-footer" />
+
+                <p><strong>Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast Âm Phủ</strong></p>
+                <p><strong>MST/MSDN:</strong> 0123344555 do Âm Phủ cấp lần đầu ngày 01/2/1945 và các lần thay đổi tiếp theo.</p>
+                <p><strong>Địa chỉ trụ sở chính:</strong> Số 7, Địa Ngục, Việt Nam</p>
+            </div>
+
+            <div class="footer-section">
+                <ul class="footer-links">
+                    <li><a href="#">Về VinFast</a></li>
+                    <li><a href="#">Về Vingroup</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Showroom & Đại lý</a></li>
+                    <li><a href="#">Điều khoản chính sách</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-contact">
+                <p><strong>Dịch vụ khách hàng</strong></p>
+                <p>📞 1900 000000</p>
+                <p>✉️ support.vn@vinfastauto.com</p>
+
+                <p><strong>Speak-up Hotline</strong></p>
+                <p>📞 +84 7788899222</p>
+                <p>✉️ v.speakup@vinfastAmPhu.vn</p>
+            </div>
+
+            <div class="footer-section footer-social">
+                <span>Kết nối với VinFast</span><br />
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+
+        <!---bubble---------------------------------->
+        <div class="footer-bubble">
+            <strong>Khuyến Mãi</strong>
+            <div class="tooltip-bubble" id="bubbleTooltip">
+                Ưu đãi 20% Khi mua trong tháng Cô Hồn 👻
+                <button class="close-btn" onclick="closeTooltip()">×</button>
+            </div>
+
+        </div>
+    </footer>
+    <script src="bootstrap/JS/bootstrap.min.js"></script>
+
+</body>
+</html>
