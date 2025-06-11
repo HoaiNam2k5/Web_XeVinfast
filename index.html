@@ -27,7 +27,6 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Ô tô</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Xe máy điện</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Dịch vụ hậu mãi</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Pin và trạm sạc</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Lưu trữ năng lượng</a></li>
@@ -35,9 +34,9 @@
 
 
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link text-primary" href="#">TÀI KHOẢN</a></li>
+                    <li class="nav-item" style="margin-right:10px;margin-top:2px;"><a class="nav-link text-primary" href="#">TÀI KHOẢN</a></li>
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="#">ĐĂNG KÍ LÁI THỬ</a>
+                        <a class="btn btn-primary" href="datcoc.html">Đặt cọc</a>
                     </li>
                 </ul>
             </div>
@@ -114,16 +113,16 @@
                         <strong>6-7 chỗ</strong>
                     </div>
                     <div>
-                    <h4>Quãng đường </h4>
-                    <strong>626 km (NEDC)</strong>
+                        <h4>Quãng đường </h4>
+                        <strong>626 km (NEDC)</strong>
                     </div>
-                    <div>                       
+                    <div>
                         <h4>Giá từ </h4>
                         <strong>1.499.000.000&nbsp;VNĐ</strong>
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='datcoc.html'"> Đặt cọc</button>
                     <button class="btn" onclick="window.location.href='chi-tiet-vf9.html'">Xem chi tiết</button>
                 </div>
             </div>
@@ -150,7 +149,7 @@
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='datcoc.html'"> Đặt cọc</button>
                     <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
                 </div>
             </div>
@@ -160,8 +159,7 @@
                     <div>
                         <h4>Dòng xe</h4>
                         <strong>MiniCar</strong>
-                        <h4>Quãng đường lên tới </h4>
-                        <strong>210 km (NEDC)</strong>
+
                     </div>
                     <div>
                         <h4>Số chỗ ngồi</h4>
@@ -177,7 +175,7 @@
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='datcoc.html'"> Đặt cọc</button>
                     <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
                 </div>
             </div>
@@ -187,8 +185,7 @@
                     <div>
                         <h4>Dòng xe</h4>
                         <strong>A-SUV</strong>
-                        <h4>Quãng đường lên tới </h4>
-                        <strong>326,4 km (NEDC)</strong>
+
                     </div>
                     <div>
                         <h4>Số chỗ ngồi</h4>
@@ -204,7 +201,7 @@
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='datcoc.html'"> Đặt cọc</button>
                     <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
                 </div>
             </div>
@@ -214,8 +211,7 @@
                     <div>
                         <h4>Dòng xe</h4>
                         <strong>B-SUV</strong>
-                        <h4>Quãng đường lên tới </h4>
-                        <strong>480 km (NEDC)</strong>
+
                     </div>
                     <div>
                         <h4>Số chỗ ngồi</h4>
@@ -231,7 +227,7 @@
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='datcoc.html'"> Đặt cọc</button>
                     <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
                 </div>
             </div>
@@ -241,8 +237,7 @@
                     <div>
                         <h4>Dòng xe</h4>
                         <strong>C-SUV</strong>
-                        <h4>Quãng đường lên tới </h4>
-                        <strong>496 km</strong>
+
                     </div>
                     <div>
                         <h4>Số chỗ ngồi</h4>
@@ -258,7 +253,7 @@
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn">Đặt cọc</button>
+                    <button class="btn" onclick="window.location.href='datcoc.html'"> Đặt cọc</button>
                     <button class="btn" onclick="window.location.href='chi-tiet-vf8.html'">Xem chi tiết</button>
                 </div>
             </div>
@@ -272,6 +267,48 @@
     </div>
     <!-- Chấm chỉ báo -->
     <div class="indicators" id="indicators"></div>
+
+
+    <div class="info-box" style="position: relative; width: 100%; height: 1000px; margin-bottom: 20px; overflow: hidden;">
+        <!-- Video nền -->
+        <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <source src="video/baohanh.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
+
+        <!-- Lớp phủ nội dung -->
+        <div class="info-overlay" style="position: relative; z-index: 1; color: white; padding: 40px;">
+            <h3>
+                <strong style="font-size:30px; ">Bảo hành & Dịch vụ</strong>
+            </h3>
+
+        </div>
+    </div>
+    <!----box text-->
+    <div class="d-flex">
+        <div class="info-box">
+            <img src="images/tramsac.jpg" alt="Trạm sạc" />
+            <div class="info-overlay">
+                <h3>Pin & Trạm sạc ô tô điện</h3>
+                <p>VinFast cung cấp giải pháp sạc đa dạng, thuận tiện và nhanh chóng.</p>
+                <a href="#">Xem chi tiết</a>
+            </div>
+        </div>
+        <div class="info-box">
+            <img src="images/thietbi.jpg" alt="Trạm sạc" />
+            <div class="info-overlay">
+                <h3>Thiết bị sạc tại nhà & sạc theo xe</h3>
+                <p>
+                    VinFast cung cấp đa dạng giải pháp sạc để đáp ứng nhu cầu sử dụng của
+                    Khách hàng một cách thuận tiện nhất.
+                    Khuyến cáo khách hàng sử dụng sạc chính hãng để hạn chế nguy cơ cháy nổ.
+                </p>
+                <a href="#">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+
+
 
     <section class="newsletter-section">
         <div class="newsletter-overlay">
@@ -291,25 +328,26 @@
     </section>
 
 
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container2">
             <div class="footer-section">
-            <img src="images/logo.png" alt="VinFast Logo âm phủ" class="logo-footer" />
+                <img src="images/logo.png" alt="VinFast Logo âm phủ" class="logo-footer" />
 
-            <p><strong>Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast Âm Phủ</strong></p>
-            <p><strong>MST/MSDN:</strong> 0123344555 do Âm Phủ cấp lần đầu ngày 01/2/1945 và các lần thay đổi tiếp theo.</p>
+                <p><strong>Công ty TNHH Kinh doanh Thương mại và Dịch vụ VinFast Âm Phủ</strong></p>
+                <p><strong>MST/MSDN:</strong> 0123344555 do Âm Phủ cấp lần đầu ngày 01/2/1945 và các lần thay đổi tiếp theo.</p>
                 <p><strong>Địa chỉ trụ sở chính:</strong> Số 7, Địa Ngục, Việt Nam</p>
             </div>
 
             <div class="footer-section">
-            <ul class="footer-links">
-                <li><a href="#">Về VinFast</a></li>
-                <li><a href="#">Về Vingroup</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Showroom & Đại lý</a></li>
-                <li><a href="#">Điều khoản chính sách</a></li>
-            </ul>
+                <ul class="footer-links">
+                    <li><a href="#">Về VinFast</a></li>
+                    <li><a href="#">Về Vingroup</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Showroom & Đại lý</a></li>
+                    <li><a href="#">Điều khoản chính sách</a></li>
+                </ul>
             </div>
 
             <div class="footer-section footer-contact">
@@ -328,9 +366,9 @@
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-    </footer>
 
-    <!---bubble---------------------------------->
+
+        <!---bubble---------------------------------->
         <div class="footer-bubble">
             <strong>Khuyến Mãi</strong>
             <div class="tooltip-bubble" id="bubbleTooltip">

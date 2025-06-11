@@ -312,6 +312,92 @@ body {
         font-weight: bold;
         text-decoration: underline;
     }
+    /*bảo hành*/
+.service-banner {
+    background-image: url('../../images/baohanh.png');
+    background-size: contain; /* Giữ nguyên tỉ lệ, hiển thị hết ảnh */
+    background-repeat: no-repeat; /* Không lặp lại */
+    background-position: center; /* Căn giữa ảnh */
+    height: auto; /* Tự động theo nội dung nếu không cố định chiều cao */
+    padding: 60px 20px; /* Giúp chữ cách biên, điều chỉnh tùy ý */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+    /*box infor--------------------------*/
+.d-flex {
+    display: flex;
+    gap: 20px; /* khoảng cách giữa các info-box */
+    justify-content:center;
+    flex-wrap: wrap;
+    margin-bottom:10px;
+}
+
+.info-box {
+    position: relative;
+    width:800px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+    .info-box img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+    }
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+    .info-overlay h3 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: #fff;
+        z-index: 2;
+        font-size: 20px;
+        margin: 0;
+        pointer-events: auto;
+    }
+
+    .info-overlay p,
+    .info-overlay a {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.5s ease;
+        background: rgba(255, 255, 255, 0.95);
+        color: #000;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 10px;
+        pointer-events: auto;
+    }
+
+    .info-overlay a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: underline;
+    }
+
+.info-box:hover .info-overlay p,
+.info-box:hover .info-overlay a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
     /*footer-----------------------------------------------------------------*/
 .footer {
     
