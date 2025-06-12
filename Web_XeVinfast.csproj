@@ -2172,6 +2172,7 @@
     <Content Include="bootstrap\CSS\index.css" />
     <Content Include="bootstrap\CSS\datcoc.css" />
     <Content Include="bootstrap\CSS\VF3.css" />
+    <Content Include="bootstrap\CSS\vf9.css" />
     <Content Include="bootstrap\JS\bootstrap.bundle.js" />
     <Content Include="bootstrap\JS\bootstrap.bundle.min.js" />
     <Content Include="bootstrap\JS\bootstrap.esm.js" />
@@ -2323,7 +2324,11 @@
     <Content Include="Site.Master" />
     <Content Include="datcoc.html" />
     <Content Include="VF3.html" />
+    <Content Include="vf8.html" />
+    <Content Include="vf9.html" />
     <Content Include="video\vf3.mp4" />
+    <Content Include="video\vf8.mp4" />
+    <Content Include="video\vf9.mp4" />
     <Content Include="video\video.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
