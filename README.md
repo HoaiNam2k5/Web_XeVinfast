@@ -64,7 +64,9 @@ Contribution
 
 License
 
-* No license file is included in the repository. If you want to add a license, consider MIT/Apache or another license depending on requirements.
+*GitHub: HoaiNam2k5
+
+For licensing and other inquiries: please contact the repository owner
 
 Contact
 
@@ -72,4 +74,3 @@ Contact
 
 ---
 
-If you would like this README to include more details (e.g., database setup, API info, demo images, or deployment instructions), feel free to request it.
